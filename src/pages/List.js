@@ -24,7 +24,6 @@ function List(props) {
                     {item.id < 10 &&
                     <NavLink to={`/list/${item.id}`} >
                         <h3>{item.title}</h3>
-                        <p>{item.body}</p>
                     </NavLink> }
                 </div>
             ))}

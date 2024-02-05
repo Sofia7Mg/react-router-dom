@@ -11,8 +11,7 @@ function ListItem(props) {
         axios.get(`https://jsonplaceholder.typicode.com/posts/${id}`)
         .then((response) => setItem(response.data))
         .catch((error) => console.log(error));
-    }, []);
-    
+    }, [item]);
 
     return (
         <div>

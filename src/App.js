@@ -1,7 +1,6 @@
 //App.js
 import React from 'react';
 import './App.css';
-
 import Home from './pages/Home.js';
 import List from './pages/List.js';
 import ListItem from './pages/ListItem.js';

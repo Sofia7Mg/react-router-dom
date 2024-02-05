@@ -4,6 +4,7 @@ import { NavLink, Outlet } from 'react-router-dom';
 function List(props) {
 
     const [data, setData] = useState([])
+    // const [element, setElement] = useState([]);
 
     useEffect(() => {
         fetch('https://jsonplaceholder.typicode.com/posts')
@@ -12,19 +13,26 @@ function List(props) {
         .catch((error) => console.log(error));
     }, []);
 
+    // let getItem =(e)=>{
+    //     setElement(e)
+    // }
     return (
         <div>
             <h1>Page HOME</h1>
             {data.map((item, index) => (
-                <div key={index}>
+                <div key={item.id}>
+                    {item.id < 10 &&
                     <NavLink to={`/list/${item.id}`} >
                         <h3>{item.title}</h3>
                         <p>{item.body}</p>
-                    </NavLink>
+                    </NavLink> }
                 </div>
             ))}
 
-            <Outlet />
+            <div>
+                <h1>Outlet :</h1>
+                <Outlet />
+            </div>
         </div>
     );
 }
